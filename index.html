@@ -7,7 +7,9 @@
   <LINK href="styles.css" rel="stylesheet" type="text/css">
   <script>
     openURL(){
-      window.open('intent://' + window.location.href + '#Intent;scheme=http;package=com.android.chrome;end');
+      let link = 'intent://' + window.location.href + '#Intent;scheme=http;package=com.android.chrome;end';
+      console.log(link);
+      window.open(link);
     }
   </script>
 </head>
