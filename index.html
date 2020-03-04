@@ -6,7 +6,7 @@
   <title>my-first-website</title>
   <LINK href="styles.css" rel="stylesheet" type="text/css">
   <script>
-    openURL(){
+    function openURL(){
       let link = 'intent://' + window.location.href + '#Intent;scheme=http;package=com.android.chrome;end';
       console.log(link);
       window.open(link);
