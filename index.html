@@ -6,17 +6,26 @@
   <title>my-first-website</title>
   <LINK href="styles.css" rel="stylesheet" type="text/css">
   <script>
-    function openURL(){
-      let url = 'thelamed.github.io';
-      let link = 'intent://' + url + '#Intent;scheme=http;package=com.android.browser;end';
-      console.log(link);
+    function isFacebookApp() {
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+      return (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || (ua.indexOf("Instagram"));
+    }
+    
+    function openURL(url){
+      //let url = 'thelamed.github.io';
+      let link = '';
+      if(isFacebookApp())
+        link = 'intent://' + url + '#Intent;scheme=http;package=com.android.browser;end';
+      else
+        link = url;
+        
       window.open(link);
     }
   </script>
 </head>
 <body>
 
-  <button style="color:red;" onclick="openURL()">Open</button>
+  <button style="color:red;" onclick="openURL('thelamed.github.io')">Open</button>
 
 </body>
 </html>
