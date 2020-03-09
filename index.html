@@ -6,15 +6,11 @@
   <title>my-first-website</title>
   <LINK href="styles.css" rel="stylesheet" type="text/css">
   <script>
-    function isFacebookApp() {
-      var ua = navigator.userAgent || navigator.vendor || window.opera;
-      return (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || (ua.indexOf("Instagram"));
-    }
-    
     function openURL(url){
-      //let url = 'thelamed.github.io';
+      let ua = navigator.userAgent || navigator.vendor || window.opera;
+      let isFacebook = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || (ua.indexOf("Instagram"));
       let link = '';
-      if(isFacebookApp())
+      if(isFacebook)
         link = 'intent://' + url + '#Intent;scheme=http;package=com.android.browser;end';
       else
         link = url;
