@@ -11,19 +11,20 @@
       let isFacebook = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || (ua.indexOf("Instagram") > -1);
       let link = '';
       if(isFacebook){
-        url = url.replace('https://', '').replace('http://', '');
+        //url = url.replace('https://', '').replace('http://', '');
         link = 'intent://' + url + '#Intent;scheme=http;package=com.android.browser;end';
+        window.open(link);
       }
-      else
+      else{
         link = url;
-        
-      window.open(link);
+        window.location.href = link;
+      }
     }
   </script>
 </head>
 <body>
 
-  <button style="color:red;" onclick="openURL('https://thelamed.github.io/')">Open</button>
+  <button style="color:red;" onclick="openURL('thelamed.github.io')">Open</button>
 
 </body>
 </html>
