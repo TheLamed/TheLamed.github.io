@@ -9,15 +9,14 @@
     function openURL(url){
       let ua = navigator.userAgent || navigator.vendor || window.opera;
       let isFacebook = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || (ua.indexOf("Instagram") > -1);
-      let link = '';
       if(isFacebook){
         url = url.replace('https://', '').replace('http://', '');
-        link = 'intent://' + url + '#Intent;scheme=http;package=com.android.browser;end';
+        let link = 'intent://' + url + '#Intent;scheme=http;package=com.android.browser;end';
+        window.open(link);
       }
       else{
-        link = url;
+        window.open(url);
       }
-      window.open(link);
     }
   </script>
 </head>
