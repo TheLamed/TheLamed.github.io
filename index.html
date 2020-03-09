@@ -8,7 +8,7 @@
   <script>
     function openURL(url){
       let ua = navigator.userAgent || navigator.vendor || window.opera;
-      let isFacebook = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || (ua.indexOf("Instagram"));
+      let isFacebook = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || (ua.indexOf("Instagram") > -1);
       let link = '';
       if(isFacebook)
         link = 'intent://' + url + '#Intent;scheme=http;package=com.android.browser;end';
