@@ -11,8 +11,10 @@
       let isFacebook = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || (ua.indexOf("Instagram") > -1);
       if(isFacebook){
         url = url.replace('https://', '').replace('http://', '');
-        let link = 'intent://' + url + '#Intent;scheme=http;package=com.android.browser;end';
-        window.open(link);
+        //let link = 'intent://' + url + '#Intent;scheme=http;package=com.android.browser;end';
+        let link = 'intent://' + url + '#Intent;scheme=http;action=android.intent.action.VIEW;end';
+        var w = window.open(link);
+        console.log(w);
       }
       else{
         window.open(url);
